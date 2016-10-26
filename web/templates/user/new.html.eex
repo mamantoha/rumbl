@@ -21,5 +21,6 @@
   </div>
 
   <%= submit "Create User", class: "btn btn-primary" %>
+  <%= link "Cancel", class: "btn btn-default", to: user_path(@conn, :index) %>
 
 <% end %>
