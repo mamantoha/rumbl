@@ -31,6 +31,9 @@
             <li>
               <%= link "Home", to: page_path(@conn, :index)%>
             </li>
+            <li>
+              <%= link "Videos", to: watch_path(@conn, :index)%>
+            </li>
             <%= if @current_user do %>
               <li>
                 <%= link "My Videos", to: video_path(@conn, :index)%>
