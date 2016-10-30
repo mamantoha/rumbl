@@ -7,6 +7,7 @@ let Player = {
     }
     let youtubeScriptTag = document.createElement("script")
     youtubeScriptTag.src = "//www.youtube.com/iframe_api"
+    // net::ERR_INTERNET_DISCONNECTE
     document.head.appendChild(youtubeScriptTag)
   },
 
