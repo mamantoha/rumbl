@@ -53,6 +53,7 @@ defmodule Rumbl.Web do
 
       import Rumbl.Router.Helpers
       import Rumbl.ErrorHelpers
+      import Rumbl.TrixEditorHelpers
       import Rumbl.Gettext
     end
   end

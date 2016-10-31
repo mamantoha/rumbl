@@ -11,6 +11,7 @@ defmodule Rumbl.User do
 
     has_many :videos, Rumbl.Video
     has_many :annotations, Rumbl.Annotation
+    has_many :articles, Rumbl.Article
 
     timestamps
   end

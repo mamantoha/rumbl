@@ -54,6 +54,18 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
+    },
+    copycat: {
+      "fonts": ["node_modules/bootstrap-sass/assets/fonts/bootstrap"] // copy node_modules/bootstrap-sass/assets/fonts/bootstrap/* to priv/static/fonts/
+    },
+    sass: {
+      options: {
+        includePaths: [
+          "node_modules/bootstrap-sass/assets/stylesheets",
+          "node_modules/trix/dist"
+        ], // tell sass-brunch where to look for files to @import
+        precision: 8 // minimum precision required by bootstrap-sass
+      }
     }
   },
 
