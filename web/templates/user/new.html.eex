@@ -6,7 +6,7 @@
   </div>
 <%end%>
 
-<%= form_for @changeset, user_path(@conn, :create), fn f ->  %>
+<%= form_for @changeset, user_path(@conn, :create), [multipart: true], fn f ->  %>
   <div class="form-group">
     <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
     <%= error_tag f, :name %>
@@ -18,6 +18,11 @@
   <div class="form-group">
     <%= text_input f, :password, placeholder: "Password", class: "form-control" %>
     <%= error_tag f, :password %>
+  </div>
+
+  <div class="form-group">
+    <%= file_input f, :avatar, class: "form-control" %>
+    <%= error_tag f, :avatar %>
   </div>
 
   <%= submit "Create User", class: "btn btn-primary" %>

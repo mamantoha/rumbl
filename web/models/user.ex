@@ -1,11 +1,13 @@
 defmodule Rumbl.User do
   use Rumbl.Web, :model
+  use Arc.Ecto.Schema
 
   schema "users" do
     field :name, :string
     field :username, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :avatar, Rumbl.Avatar.Type
 
     has_many :videos, Rumbl.Video
     has_many :annotations, Rumbl.Annotation
@@ -16,6 +18,7 @@ defmodule Rumbl.User do
   def changeset(model, params \\ :invalid) do
     model
     |> cast(params, ~w(name username), [])
+    |> cast_attachments(params, [:avatar])
     |> validate_length(:username, min: 1, max: 20)
     |> unique_constraint(:username)
   end
