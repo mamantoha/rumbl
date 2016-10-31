@@ -1,41 +1,5 @@
-
 trix-editor {
   min-height: 320px !important;
   width: 640px;
-  }
-
-
-trix-editor:empty:not(:focus)::before {
-  content: attr(placeholder);
-  color: graytext;
+  overflow-y: auto;
 }
-
-trix-editor a[contenteditable=false] {
-  cursor: text;
-}
-
-trix-editor img {
-  max-width: 100%;
-  height: auto;
-}
-
-trix-editor [data-trix-attachment] figcaption textarea {
-  resize: none;
-}
-
-trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
-  position: absolute;
-  left: -9999px;
-  max-height: 0px;
-}
-
-trix-editor [data-trix-attachment][data-trix-mutable] figcaption:empty::before {
-  content: "Add a caption…";
-  color: graytext;
-}
-
-trix-editor [data-trix-selection] { font-size: 0 !important;
-padding: 0 !important;
-margin: 0 !important;
-border: none !important; }
-trix-editor { display: block; }
