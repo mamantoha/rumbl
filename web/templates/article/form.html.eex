@@ -1,3 +1,5 @@
+<meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">

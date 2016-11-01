@@ -29,6 +29,7 @@ defmodule Rumbl.Router do
 
     resources "/videos", VideoController
     resources "/articles", ArticleController
+    resources "/attachments", AttachmentController, only: [:create, :delete]
   end
 
   # Other scopes may use custom stacks.

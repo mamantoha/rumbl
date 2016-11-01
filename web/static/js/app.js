@@ -13,14 +13,29 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 
+import MainView from './views/main';
+
 // Import local files
 //
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 import "trix"
 
-
 import socket from "./socket"
 import Video from "./video"
 
 Video.init(socket, document.getElementById("video"))
+
+function handleDOMContentLoaded() {
+  const view = new MainView();
+  view.mount();
+
+  window.currentView = view;
+}
+
+function handleDocumentUnload() {
+  window.currentView.unmount();
+}
+
+window.addEventListener('DOMContentLoaded', handleDOMContentLoaded, false);
+window.addEventListener('unload', handleDocumentUnload, false);
