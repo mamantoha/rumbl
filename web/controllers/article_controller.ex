@@ -1,3 +1,4 @@
+require IEx
 defmodule Rumbl.ArticleController do
   use Rumbl.Web, :controller
 

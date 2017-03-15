@@ -40,7 +40,8 @@ defmodule Rumbl.Mixfile do
      {:comeonin, "~> 2.0"},
      {:cowboy, "~> 1.0"},
      {:arc, "~> 0.6.0-rc3"},
-     {:arc_ecto, "~> 0.5.0-rc1"}
+     {:arc_ecto, "~> 0.5.0-rc1"},
+     {:ex_machina, "~> 2.0", only: :test},
    ]
   end
 

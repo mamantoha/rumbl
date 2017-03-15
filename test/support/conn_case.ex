@@ -27,6 +27,8 @@ defmodule Rumbl.ConnCase do
 
       import Rumbl.Router.Helpers
 
+      import Rumbl.Factory
+
       # The default endpoint for testing
       @endpoint Rumbl.Endpoint
     end

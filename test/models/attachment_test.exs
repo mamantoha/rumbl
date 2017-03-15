@@ -3,8 +3,8 @@ defmodule Rumbl.AttachmentTest do
 
   alias Rumbl.Attachment
 
-  @valid_attrs %{file: "some content"}
-  @invalid_attrs %{}
+  @valid_attrs %{file: %Plug.Upload{path: "test/attachment_files/example.png", filename: "example.png"}}
+  @invalid_attrs %{file: "invalid uploader"}
 
   test "changeset with valid attributes" do
     changeset = Attachment.changeset(%Attachment{}, @valid_attrs)
